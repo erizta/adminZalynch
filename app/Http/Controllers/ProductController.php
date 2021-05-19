@@ -24,10 +24,16 @@ class ProductController extends Controller
             return DataTables::of($query)
                 ->addColumn('action', function ($item) {
                     return '
-                <a href="' . route('dashboard.product.edit', $item->id) . '">
-                Edit
-                </a>
-                ';
+                        <a href="' . route('dashboard.product.edit', $item->id) . '" class="bg-yellow-500 text-white rounded-md px-2 py-1 m-2">
+                            Edit
+                        </a>
+                        <form class="inline-block" action="' . route('dashboard.product.destroy', $item->id) . '" method="POST">
+                            <button class="bg-red-500 text-white rounded-md px-2 py-1 m-2">
+                                Delete
+                            </button>
+                            ' . method_field('delete') . csrf_field() . '
+                        </form>
+                    ';
                 })
                 ->editColumn('price', function ($item) {
                     return number_format($item->price);
@@ -93,9 +99,14 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, Product $product)
     {
-        //
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->name);
+
+        $product->update($data);
+
+        return redirect()->route('dashboard.product.index');
     }
 
     /**
@@ -104,8 +115,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return redirect()->route('dashboard.product.index');
     }
 }
