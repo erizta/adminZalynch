@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 
 class ProductController extends Controller
@@ -20,9 +22,17 @@ class ProductController extends Controller
             $query = Product::query();
 
             return DataTables::of($query)
+                ->addColumn('action', function ($item) {
+                    return '
+                <a href="' . route('dashboard.product.edit', $item->id) . '">
+                Edit
+                </a>
+                ';
+                })
                 ->editColumn('price', function ($item) {
                     return number_format($item->price);
                 })
+                ->rawColumns(['action'])
                 ->make();
         }
         return view('pages.dashboard.product.index');
@@ -44,9 +54,14 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        //
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->name);
+
+        Product::create($data);
+
+        return redirect()->route('dashboard.product.index');
     }
 
     /**
@@ -66,9 +81,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
+        return view('pages.dashboard.product.edit', compact('product'));
     }
 
     /**

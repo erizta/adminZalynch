@@ -31,7 +31,6 @@
                     width: '25%'
                 }, ]
             })
-            console.log(datatable);
         </script>
     </x-slot>
 
