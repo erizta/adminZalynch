@@ -28,7 +28,7 @@
                     orderable: false,
                     searchable: false,
                     width: '25%'
-                }, ]
+                } ]
             })
 
         </script>
