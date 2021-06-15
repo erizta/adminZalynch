@@ -25,10 +25,10 @@
                     <img src="/frontend/images/content/illustration-success.png" alt="congrats illustration" />
                     <h2 class="text-3xl font-semibold mb-6">Ah yes it’s success!</h2>
                     <p class="text-lg mb-12">
-                        Furniture yang anda beli akan kami kirimkan saat ini juga so now
-                        please sit tight and be ready for it
+                        The clothes that you buy, we will send it right.
+                        Please sit tight and be ready for it
                     </p>
-                    <a href="details.html"
+                    <a href="{{ route('index') }}"
                         class="text-gray-900 bg-red-200 focus:outline-none w-full py-3 rounded-full text-lg focus:text-black transition-all duration-200 px-8 cursor-pointer">
                         Back to Shop
                     </a>

@@ -5,7 +5,7 @@
             <div class="w-56 items-center flex">
                 <a href="{{ route('index') }}">
                     <img src="{{ url('/frontend/images/content/logo.png') }}"
-                        alt="Luxspace | Fulfill your house with beautiful furniture" />
+                        alt="Zalynch | Fulfill your closet with beautiful clothes" />
                 </a>
             </div>
             <div class="w-full"></div>

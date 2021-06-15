@@ -66,7 +66,7 @@
                                     <h6 class="font-semibold text-lg md:text-xl leading-8">
                                         {{ $item->product->name }}
                                     </h6>
-                                    <span class="text-sm md:text-lg">Office Room</span>
+                                    <span class="text-sm md:text-lg">Closets</span>
                                     <h6 class="font-semibold text-base md:text-lg block md:hidden">
                                         IDR {{ number_format($item->product->price) }}
 

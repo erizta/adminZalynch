@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>LuxSpace</title>
+    <title>Zalynch</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -12,7 +12,7 @@
     <meta property="og:url" content="" />
     <meta property="og:image" content="" />
 
-    <link rel="manifest" href="site.webmanifest" />
+    {{-- <link rel="manifest" href="site.webmanifest" /> --}}
     <link rel="apple-touch-icon" href="{{ url('/frontend/images/content/favicon.png') }}" />
     <!-- Place favicon.ico in the root directory -->
 
