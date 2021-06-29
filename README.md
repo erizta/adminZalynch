@@ -186,4 +186,4 @@ Project Link: [https://github.com/erizta/adminZalynch](https://github.com/erizta
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[product-screenshot]: 11.png
+[product-screenshot]: 11.gif
