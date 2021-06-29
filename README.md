@@ -34,7 +34,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
@@ -66,13 +65,6 @@ AdminZalynch is a web application for administrator to manage the contents, such
 <!-- GETTING STARTED -->
 
 ## Getting Started
-
-### Prerequisites
-
--   npm
-    ```sh
-    npm install npm@latest -g
-    ```
 
 ### Installation
 
